@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Inside — Daily Flow</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <h1>Inside</h1>
+        <span id="todayDate" class="muted"></span>
+      </header>
+
+      <section class="card next-meal-card">
+        <h2>Next Meal</h2>
+        <div id="nextMealName" class="headline"></div>
+        <div id="nextMealTime" class="muted"></div>
+        <div id="nextMealCountdown" class="countdown"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Meals Today</h2>
+          <span class="muted">4-hour dynamic schedule</span>
+        </div>
+        <div id="mealGrid" class="meal-grid"></div>
+      </section>
+
+      <section class="card" id="selectedMealCard">
+        <div class="section-head">
+          <h2>Selected Meal</h2>
+          <a href="/plan/" class="btn subtle">Plan</a>
+        </div>
+        <div id="selectedMealContent"></div>
+      </section>
+
+      <section class="card">
+        <h2>Daily Balance</h2>
+        <div id="balanceSummary" class="balance-summary"></div>
+        <div class="progress-track"><div id="balanceProgress" class="progress-fill"></div></div>
+
+        <div class="goal-grid">
+          <label>
+            Bedtime
+            <input id="bedtime" type="time" />
+          </label>
+          <label>
+            Wake time
+            <input id="wakeTime" type="time" />
+          </label>
+          <label>
+            Sleep hours
+            <input id="sleepHours" type="number" step="0.25" min="0" max="24" />
+          </label>
+          <label>
+            Steps
+            <input id="steps" type="number" min="0" step="100" />
+          </label>
+        </div>
+        <p id="stepsHint" class="muted"></p>
+
+        <div id="habitsList" class="habits-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Workout Helper</h2>
+        <div class="inline-actions">
+          <button id="workoutDoneBtn" class="btn">Workout finished</button>
+          <button id="workoutClearBtn" class="btn subtle">Clear</button>
+        </div>
+        <div id="workoutStatus" class="muted"></div>
+      </section>
+
+      <section class="card">
+        <h2>Quick Rules</h2>
+        <div class="rule-block">
+          <h3>Water</h3>
+          <p id="waterText"></p>
+          <div class="inline-actions">
+            <button id="water250" class="btn">+250 ml</button>
+            <button id="water500" class="btn">+500 ml</button>
+          </div>
+        </div>
+        <div class="rule-block">
+          <h3>Coffee</h3>
+          <p id="coffeeText"></p>
+          <button id="coffeeBtn" class="btn">Log coffee</button>
+          <p id="coffeeReminder" class="muted"></p>
+        </div>
+        <ul class="muted bullets">
+          <li>Always measure food before cooking.</li>
+          <li>Avoid sugary drinks.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
