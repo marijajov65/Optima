@@ -411,8 +411,8 @@ function renderWorkouts() {
     <p class="muted">Pauze između serija: 90 sek – 3 min</p>
     <div class="habits-list">${current.items
       .map(
-        (item, i) =>
-          `<label class="habit-item"><input data-i="${i}" type="checkbox" ${checks[i] ? 'checked' : ''}/> <span>${item}</span></label>`,
+          (item, i) =>
+              `<label class="habit-item"><input data-i="${i}" type="checkbox" ${checks[i] ? 'checked' : ''}/> <span>${item}</span></label>`,
       )
       .join('')}</div>
     <div class="inline-actions">

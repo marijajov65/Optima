@@ -9,7 +9,3 @@ python3 -m http.server 4173
 ```
 
 Open http://localhost:4173.
-
-## PR conflict note
-
-If a previous PR has merge conflicts, open a fresh PR from the latest branch state with a new commit so reviewers can merge cleanly.
