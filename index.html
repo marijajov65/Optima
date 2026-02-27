@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Optima</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar card">
+        <div>
+          <h1>Optima</h1>
+          <p class="muted">Daily system for food, training, recovery and consistency.</p>
+        </div>
+        <div id="todayDate" class="pill"></div>
+      </header>
+
+      <nav class="tabs card" id="tabs">
+        <button class="tab active" data-tab="today">Today</button>
+        <button class="tab" data-tab="groceries">Groceries</button>
+        <button class="tab" data-tab="workouts">Workouts</button>
+      </nav>
+
+      <section class="view active" data-view="today">
+        <section class="card next-meal-card">
+          <h2>Next Meal</h2>
+          <div id="nextMealName" class="headline"></div>
+          <div id="nextMealTime" class="muted"></div>
+          <div id="nextMealCountdown" class="countdown"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <h2>Meals Today</h2>
+            <span class="muted">Adaptive 4h rhythm</span>
+          </div>
+          <div id="mealGrid" class="meal-grid"></div>
+        </section>
+
+        <section class="card" id="selectedMealCard">
+          <div class="section-head">
+            <h2>Selected Meal</h2>
+            <a href="/plan/" class="btn subtle">Full Plan</a>
+          </div>
+          <div id="selectedMealContent"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <h2>Optimization</h2>
+            <span id="balanceSummary" class="muted"></span>
+          </div>
+          <div class="optimization-grid">
+            <div id="optimizationRing" class="ring"><span id="ringPercent">0%</span></div>
+            <div>
+              <div class="progress-track"><div id="balanceProgress" class="progress-fill"></div></div>
+              <p id="optimizedLabel" class="headline"></p>
+              <p id="stepsHint" class="muted"></p>
+            </div>
+          </div>
+
+          <div class="goal-grid">
+            <label>Bedtime <input id="bedtime" type="time" /></label>
+            <label>Wake time <input id="wakeTime" type="time" /></label>
+            <label>Sleep hours <input id="sleepHours" type="number" step="0.25" min="0" max="24" /></label>
+            <label>Steps <input id="steps" type="number" min="0" step="100" /></label>
+          </div>
+          <div id="habitsList" class="habits-list"></div>
+        </section>
+
+        <section class="card">
+          <h2>Quick Rules</h2>
+          <div class="rule-grid">
+            <div class="rule-block">
+              <h3>Water</h3>
+              <p id="waterText"></p>
+              <div class="inline-actions">
+                <button id="water250" class="btn">+250 ml</button>
+                <button id="water500" class="btn">+500 ml</button>
+              </div>
+            </div>
+            <div class="rule-block">
+              <h3>Coffee</h3>
+              <p id="coffeeText"></p>
+              <button id="coffeeBtn" class="btn">Log coffee</button>
+              <p id="coffeeReminder" class="muted"></p>
+            </div>
+          </div>
+          <ul class="muted bullets">
+            <li>Measure food before cooking.</li>
+            <li>Avoid sugary drinks.</li>
+            <li>Keep meals in ~4h intervals.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="view" data-view="groceries">
+        <section class="card">
+          <h2>Shopping Builder</h2>
+          <p class="muted">Pick days and Optima combines all ingredients into one grocery list.</p>
+          <div id="dayPicker" class="day-picker"></div>
+          <label class="switch-row"><input id="doublePrep" type="checkbox" /> Prepare one meal for 2 days (double selected days)</label>
+        </section>
+        <section class="card">
+          <div class="section-head">
+            <h2>What to Buy</h2>
+            <button class="btn subtle" id="copyGroceriesBtn">Copy list</button>
+          </div>
+          <div id="groceryStats" class="muted"></div>
+          <div id="groceryList" class="plan-list"></div>
+        </section>
+      </section>
+
+      <section class="view" data-view="workouts">
+        <section class="card">
+          <h2>Training Tracker</h2>
+          <p class="muted">From your attached programs (Trening #1–#4). Mark sets done and close the day.</p>
+          <div id="workoutSelector" class="inline-actions"></div>
+          <div id="workoutCard"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
