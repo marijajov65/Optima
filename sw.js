@@ -1,4 +1,4 @@
-const CACHE = 'inside-v1';
+const CACHE = 'optima-v2';
 const ASSETS = ['/', '/index.html', '/styles.css', '/app.js', '/plan/', '/plan/index.html', '/plan.js', '/manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {

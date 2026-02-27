@@ -1,9 +1,9 @@
 {
-  "name": "Inside Habit Tracker",
-  "short_name": "Inside",
+  "name": "Optima",
+  "short_name": "Optima",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#09090b",
-  "theme_color": "#09090b",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
   "icons": []
 }
